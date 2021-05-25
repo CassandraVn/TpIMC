@@ -1,46 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
-<link rel="stylesheet" href="bootstrap.css">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+      integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+
 <head>
     <meta charset="UTF-8">
     <title>Calcul IMC</title>
 </head>
 <body>
-<h1>IMC</h1> <br>
-
-Poids :<input type="number" id="poids"> kg <br>
-<br>
-Taille : <input type="number" id="taille"> m (ex : 1.70m) <br> <br>
-<button onclick="calculer()">Calculer</button> <br> <br>
 
 
-<h2 id="imc">test</h2>
-<h3 id="tranche"></h3>
+<div class="container">
+    <!-- 12 colonnes de bootstrap-->
+    <div class="row"> <!-- ouverture de lignes-->
+        <!-- 4 colones au milieu -->
+        <div class="offset-4 col-4">
 
-<script>
+            <h1>Calcul IMC</h1> <br>
+            <div class="form-group">
+                <input type="number" id="poids" placeholder="Poids en kg :"><br> <br>
+            </div>
+            <div class="form-group">
+                <input type="number" id="taille" placeholder="Taille : (ex: 1.70m)"><br> <br>
+            </div>
+                <button onclick="calculer()">Calculer</button>
+                <br> <br>
 
-    function calculer() {
-        let poids = document.getElementById("poids").value;
-        let taille = document.getElementById("taille").value;
 
-        document.getElementById('poids').value='';
-        document.getElementById('taille').value='';
+            <h2 id="imc"></h2>
+            <h3 id="tranche"></h3>
 
-        let imc = poids / (taille*taille);
-        document.getElementById('imc').innerHTML = imc.toFixed(1);
+            <script>
 
-        if (imc < 18.5) {
-            document.getElementById('tranche').innerHTML = "maigreur";
-        }
-        else if (imc > 18.5 && imc <= 25) {
-            document.getElementById('tranche').innerHTML = "normal";
-        }
-        else if (imc > 25) {
-            document.getElementById('tranche').innerHTML = "surpoids";
-        }
-    }
+                function calculer() {
+                    let poids = document.getElementById("poids").value;
+                    let taille = document.getElementById("taille").value;
 
-</script>
+                    document.getElementById('poids').value = '';
+                    document.getElementById('taille').value = '';
+
+                    let imc = poids / (taille * taille);
+                    document.getElementById('imc').innerHTML = imc.toFixed(1);
+
+                    if (imc < 18.5) {
+                        document.getElementById('tranche').innerHTML = "maigreur";
+                    } else if (imc > 18.5 && imc <= 25) {
+                        document.getElementById('tranche').innerHTML = "normal";
+                    } else if (imc > 25) {
+                        document.getElementById('tranche').innerHTML = "surpoids";
+                    }
+                }
+
+            </script>
+
+
+        </div>
+
+    </div>
+</div>
+
 
 </body>
 </html>
