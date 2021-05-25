@@ -21,8 +21,8 @@ Taille : <input type="number" id="taille">m (ex : 1.70m) <br> <br>
         let poids = document.getElementById("poids").value;
         let taille = document.getElementById("taille").value;
 
-        //document.getElementById('poids').value='';
-        //document.getElementById('taille').value='';
+        document.getElementById('poids').value='';
+        document.getElementById('taille').value='';
 
         let imc = poids / (taille*taille);
         document.getElementById('imc').innerHTML = imc.toFixed(1);
