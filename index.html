@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Calcul IMC</title>
+</head>
+<body>
+<h1>IMC</h1>
+
+Poids :<input type="number" id="poids">kg <br>
+<br>
+Taille : <input type="number" id="taille">m (ex : 1.70m) <br> <br>
+<button onclick="calculer()">Calculer</button>
+
+<h2 id="imc"></h2>
+<h3 id="tranche"></h3>
+
+<script>
+
+    function calculer() {
+        let poids = document.getElementById("poids").value;
+        let taille = document.getElementById("taille").value;
+
+        //document.getElementById('poids').value='';
+        //document.getElementById('taille').value='';
+
+        let imc = poids / (taille*taille);
+        document.getElementById('imc').innerHTML = imc.toFixed(1);
+
+        if (imc < 18.5) {
+            document.getElementById('tranche').innerHTML = "maigreur";
+        }
+        else if (imc > 18.5 && imc < 25) {
+            document.getElementById('tranche').innerHTML = "normal";
+        }
+        else if (imc > 25) {
+            document.getElementById('tranche').innerHTML = "surpoids";
+        }
+    }
+
+</script>
+
+</body>
+</html>
