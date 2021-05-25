@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+<link rel="stylesheet" href="bootstrap.css">
 <head>
     <meta charset="UTF-8">
     <title>Calcul IMC</title>
 </head>
 <body>
-<h1>IMC</h1>
+<h1>IMC</h1> <br>
 
 Poids :<input type="number" id="poids">kg <br>
 <br>
@@ -30,7 +31,7 @@ Taille : <input type="number" id="taille">m (ex : 1.70m) <br> <br>
         if (imc < 18.5) {
             document.getElementById('tranche').innerHTML = "maigreur";
         }
-        else if (imc > 18.5 && imc < 25) {
+        else if (imc > 18.5 && imc <= 25) {
             document.getElementById('tranche').innerHTML = "normal";
         }
         else if (imc > 25) {

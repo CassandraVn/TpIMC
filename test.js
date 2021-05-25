@@ -1,9 +1,8 @@
 function calculer() {
     let poids = document.getElementById("poids").value;
     let taille = document.getElementById("taille").value;
-
-    //document.getElementById('poids').value='';
-    //document.getElementById('taille').value='';
+    document.getElementById('poids').value=''; // vider l'input
+    document.getElementById('taille').value='';
 
     let imc = poids / (taille*taille);
     document.getElementById('imc').innerHTML = imc.toFixed(1);
